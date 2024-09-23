@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Collections.Concurrent;
 using System.Threading;
+using System.IO;
 
 
 class ThreadSafeBoolean
@@ -62,30 +63,45 @@ public class signController : MonoBehaviour
         { KeyCode.P, "ㅔ" },
     };
 
-    Dictionary<string, string> mapPhrase = new Dictionary<string, string>
+    static Dictionary<string, string> animMap = new Dictionary<string, string>();
+
+    static void GetAnimMap()
     {
-        { "안녕", "안녕" },
-        { "안녕하다", "안녕" },
-        { "만나다", "만나다" },
-        { "반갑다", "즐겁다" },
-        { "나", "나" },
-        { "저", "나" },
-        { "제", "나" },
-        { "소개", "소개" },
-        { "소개하다", "소개" },
-        { "이름", "이름" },
-        { "이다", "이다" },
-        { "오늘", "오늘" },
-        { "날씨", "날씨" },
-        { "맑다", "맑다" },
-        { "즐겁다", "즐겁다" },
-        { "하루", "하루" },
-        { "되다", "되다" },
-    };
+        string filePath = "./Assets/sign/sign.csv"; // CSV 파일 경로
+        Debug.Log(filePath);
+        try
+        {
+            using (var reader = new StreamReader(filePath))
+            {   
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    if (values.Length == 2)
+                    {
+                        string key = values[0].Trim();
+                        string value = values[1].Trim();
+
+                        animMap[key] = value;
+                    }
+                }
+            }
+
+            foreach (string key in animMap.Keys)
+                Debug.Log($"{key} : {animMap[key]}");
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Error: {ex.Message}");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        GetAnimMap();
         anim = gameObject.GetComponent<Animator>();
 
         // 스레드 객체 생성
@@ -117,10 +133,10 @@ public class signController : MonoBehaviour
             if (messageQueue.Count > 0)
             {
                 string action = messageQueue.Take();
-                if (mapPhrase.ContainsKey(action))
+                if (animMap.ContainsKey(action))
                 {
                     isAnimating.Value = true;
-                    StartCoroutine(PlayAnimationAndWait(mapPhrase[action]));
+                    StartCoroutine(PlayAnimationAndWait(animMap[action]));
                 }
             }
             else
@@ -200,7 +216,7 @@ public class signController : MonoBehaviour
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Exception: {0}", e);
+                        Debug.Log($"Exception: {e}");
                     }
                     finally
                     {
@@ -212,7 +228,7 @@ public class signController : MonoBehaviour
             }
             catch (SocketException e)
             {
-                Console.WriteLine("SocketException: {0}", e);
+                Debug.Log($"SocketException: {e}");
             }
             finally
             {
