@@ -1,5 +1,5 @@
 <div align=center>
-  <h1>sign_language_bot</h1>
+  <h1>Sign Language Bot</h1>
   <p>수어 아바타를 통해 실시간 미디어로부터 수어를 생성하는 프로젝트</p>
   <img src="https://shields.io/badge/숭실대학교_제14회_캡스톤디자인_경진대회-Gold_Award-FFDC73.svg?&style=for-the-badge&logoColor=white"/><br>
 </div>
