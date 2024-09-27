@@ -13,32 +13,7 @@
 
 <h2>구조</h2>
 
-```mermaid
-flowchart LR
-
-subgraph PreprocessModel [Preprocess Model]
-  direction TB
-  B --> C --> D
-end
-
-subgraph UnityModule [Unity Module]
-  E
-end
-
-subgraph SignLanguageBot [Sign Language Bot]
-  PreprocessModel
-  UnityModule
-end
-
-A --> PreprocessModel --> UnityModule --> F
-
-A["Media stream"]
-B(["<div>Sentence Endpoint</div><div>Detection Module</div>"])
-C(["<div>Google Speech</div><div>Recognition Model</div>"])
-D(["<div>KoNLPy Okt</div><div>Nomalization Model</div>"])
-E(["<div>Unity Avatar</div>"])
-F["User"]
-```
+[![](https://mermaid.ink/img/pako:eNptUtFumzAU_ZUrP20SyYDOhKKqUtOke1jSVUn7sngPHr4l1sBGxrRNo_z7jNMw1u0FcY_POff4-u5JrgWSjDyW-jnfcmNhsWKKqab9WRheb-HOYG10jk2zdMwSNn8A8MgPpgCENJhbqRXcT7t6CqPRJVz774wpVOIv0wcl7c6p2xJh4ws4Vt5s_q9gLQu14KpoeYFTbWHTAXBCwEFe-S5sBw1a9bZXLhc0ulUCGmuQVz7n-5s6jtKm4qV8RQHP2ojG84bhO58uSXlKwpWsuB9ER73x3TaMrJCXo3tZISxRSM6Iizv94A4uhHy6XKOyqHKEuRK1lspefOpgfzZD-zbZY8vjkTP4yNR17_BF68LFWdeI-XagXmGuC5f3TY_lUD7r5V_17eJuB99-DTvfan93_n_xvBcf3-_qiVtuhowbR3ho0LiKBKRCN0op3Krtu2dhxG6xQkYy9yvwkbelZYSpg6Py1ur1TuUks6bFgLS14BZnkrtdqE6gG6PVZnncXr_EAam5-q51T3ElyfbkhWRROj6PJ2eU0jiKw_RzGpAdyeIoGcdnNKRJMqGTCY2SQ0BevUE4Pqc0SaMwTaljhEly-A04zRDw?type=png)](https://mermaid.live/edit#pako:eNptUtFumzAU_ZUrP20SyYDOhKKqUtOke1jSVUn7sngPHr4l1sBGxrRNo_z7jNMw1u0FcY_POff4-u5JrgWSjDyW-jnfcmNhsWKKqab9WRheb-HOYG10jk2zdMwSNn8A8MgPpgCENJhbqRXcT7t6CqPRJVz774wpVOIv0wcl7c6p2xJh4ws4Vt5s_q9gLQu14KpoeYFTbWHTAXBCwEFe-S5sBw1a9bZXLhc0ulUCGmuQVz7n-5s6jtKm4qV8RQHP2ojG84bhO58uSXlKwpWsuB9ER73x3TaMrJCXo3tZISxRSM6Iizv94A4uhHy6XKOyqHKEuRK1lspefOpgfzZD-zbZY8vjkTP4yNR17_BF68LFWdeI-XagXmGuC5f3TY_lUD7r5V_17eJuB99-DTvfan93_n_xvBcf3-_qiVtuhowbR3ho0LiKBKRCN0op3Krtu2dhxG6xQkYy9yvwkbelZYSpg6Py1ur1TuUks6bFgLS14BZnkrtdqE6gG6PVZnncXr_EAam5-q51T3ElyfbkhWRROj6PJ2eU0jiKw_RzGpAdyeIoGcdnNKRJMqGTCY2SQ0BevUE4Pqc0SaMwTaljhEly-A04zRDw)
 
 <ul>
   <li>
