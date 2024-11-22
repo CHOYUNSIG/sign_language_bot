@@ -3,6 +3,7 @@
   <p>수어 아바타를 통해 실시간 미디어로부터 수어를 생성하는 프로젝트</p>
   <img src="https://shields.io/badge/숭실대학교_제14회_캡스톤디자인_경진대회-Gold_Award-FFDC73.svg?&style=for-the-badge&logoColor=white"/>
   <img src="https://shields.io/badge/지능형_로봇_컨소시엄_2024_창의적_종합설계_경진대회-Grand_Prize-FF86D8.svg?style=for-the-badge&logoColor=white"/>
+  <img src="https://shields.io/badge/2024_공학페스티벌_창의적_종합설계_경진대회-Ministerial_Award-80ABFF.svg?style=for-the-badge&logoColor=white"/>
   <br>
 </div>
 
